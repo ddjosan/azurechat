@@ -33,7 +33,7 @@ export const MainMenu = () => {
           variant={"outline"}
         >
           <Link href="/" title="Home">
-            <img src="/ai-icon.png" />
+            <img src="/ai-icon2.png" />
           </Link>
         </Button>
         <Button
