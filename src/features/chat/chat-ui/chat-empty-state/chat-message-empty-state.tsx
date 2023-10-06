@@ -33,12 +33,12 @@ export const ChatMessageEmptyState: FC<Prop> = (props) => {
           </p>
           <ChatStyleSelector disable={false} />
         </div>
-        <div className="flex flex-col gap-2">
+        {/* <div className="flex flex-col gap-2">
           <p className="text-sm text-muted-foreground">
             How would you like to chat?
           </p>
           <ChatTypeSelector disable={false} />
-        </div>
+        </div> */}
         {showFileUpload === "data" && <ChatFileUI />}
       </Card>
     </div>
