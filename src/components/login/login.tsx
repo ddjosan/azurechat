@@ -10,7 +10,7 @@ import {
 
 export const LogIn = () => {
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{height:"100%"}}>
       <div className="flex flex-col justify-center items-center p-5">
         <img src='/undp-logo.png' className="w-1/5"  style={{width:"20%"}}  />
         <CardHeader className="items-center">
