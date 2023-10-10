@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import {
   LayoutDashboard,
-  MessageCircle,
   PanelLeftClose,
   PanelRightClose,
 } from "lucide-react";
@@ -29,24 +28,6 @@ export const MainMenu = () => {
         >
           {isMenuOpen ? <PanelLeftClose /> : <PanelRightClose />}
         </Button>
-        <Button
-          asChild
-          className="rounded-full w-[40px] h-[40px] p-1 text-primary hidden-element"
-          variant={"outline"}
-        >
-          <Link href="/chat" title="Home">
-            <img src="/ai-icon2.png" />
-          </Link>
-        </Button>
-        {/* <Button
-          asChild
-          className="rounded-full w-[40px] h-[40px] p-2 text-primary hidden-element"
-          variant={"outline"}
-        >
-          <Link href="/chat" title="Chat">
-            <MessageCircle />
-          </Link>
-        </Button> */}
         <NewChat closeOnChange={false}/>
         {session?.user?.isAdmin ? (
           <Button

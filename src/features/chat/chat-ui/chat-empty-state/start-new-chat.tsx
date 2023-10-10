@@ -10,7 +10,7 @@ export const StartNewChat: FC<Prop> = (props) => {
   return (
     <div className="flex flex-col w-full items-center justify-center h-full p-2">
       <div className="flex flex-col mb-8">
-        <img src="/ai-icon2.png" className="w-36" />
+        <img src="/undp-logo.png" className="w-1/4" />
       </div>
       <Card className="flex flex-col p-5 max-w-sm">
         <Typography variant="h4" className="text-primary">

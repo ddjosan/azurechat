@@ -11,6 +11,7 @@ import { Avatar, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import { CodeBlock } from "./code-block";
 import { MemoizedReactMarkdown } from "./memoized-react-markdown";
+import { AI_NAME } from "@/features/theme/customise";
 
 interface ChatRowProps {
   name: string;
@@ -45,7 +46,14 @@ const ChatRow: FC<ChatRowProps> = (props) => {
         <div className="flex flex-1">
           <div className="flex gap-4 items-center flex-1">
             <div className="">
-              {isNotNullOrEmpty(props.profilePicture) ? (
+              {(props.name === AI_NAME) ? (
+                <img
+                  width={23}
+                  height={43}
+                  alt=""
+                  src="/undp-logo.png"
+                />
+              ) : (isNotNullOrEmpty(props.profilePicture) ? (
                 <Avatar>
                   <AvatarImage src={props.profilePicture} />
                 </Avatar>
@@ -56,7 +64,20 @@ const ChatRow: FC<ChatRowProps> = (props) => {
                   strokeWidth={1.2}
                   className="text-primary"
                 />
+              )
               )}
+              {/* {isNotNullOrEmpty(props.profilePicture) ? (
+                <Avatar>
+                  <AvatarImage src={props.profilePicture} />
+                </Avatar>
+              ) : (
+                <UserCircle
+                  width={40}
+                  height={40}
+                  strokeWidth={1.2}
+                  className="text-primary"
+                />
+              )} */}
             </div>
             <Typography variant="h5" className="capitalize text-sm">
               {props.name}

@@ -16,7 +16,7 @@ export const ChatMessageEmptyState: FC<Prop> = (props) => {
   return (
     <div className="flex flex-col w-full h-full p-2 items-center justify-center">
       <div className="flex flex-col justify-center items-center p-3 mb-8">
-        <img src="/ai-icon2.png" className="w-36" />
+        <img src="/undp-logo.png" className="w-1/4" />
         <p className="max-w-sm">
           Start by just typing your message in the box below. You can also
           personalise the chat by making changes to the settings on the right.
