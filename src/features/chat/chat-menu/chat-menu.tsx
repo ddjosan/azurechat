@@ -4,6 +4,7 @@ import MenuItems from "./menu-items";
 import { NewChat } from "./new-chat";
 import './chat-menu.css'
 import { UserProfile } from "@/features/user-profile";
+
 export const ChatMenu = async () => {
   const items = await FindAllChatThreadForCurrentUser();
 

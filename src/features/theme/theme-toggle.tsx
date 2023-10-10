@@ -27,13 +27,6 @@ export function ThemeToggle() {
         >
           <Moon size={18} />
         </TabsTrigger>
-        <TabsTrigger
-          value="system"
-          onClick={() => setTheme("system")}
-          className="h-[40px] w-[40px]  rounded-full"
-        >
-          <Laptop2 size={18} />
-        </TabsTrigger>
       </TabsList>
     </Tabs>
   );

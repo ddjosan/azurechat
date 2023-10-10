@@ -5,7 +5,7 @@ export const LoadingSkeleton = () => {
         width={80}
         height={80}
         alt=""
-        src="/ai-icon2.png"
+        src="/undp-logo.png"
         className="animate-bounce"
       />
     </div>
