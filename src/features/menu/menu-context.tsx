@@ -7,19 +7,19 @@ interface MenuContextProps {
 }
 
 export const MenuContext = createContext<MenuContextProps>({
-  isMenuOpen: true,
+  isMenuOpen: window.innerWidth < 820 ? false : true,
   toggleMenu: () => {},
   closeMenu: () => {}
 });
 
 export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(window.innerWidth < 820 ? false : true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = () => setIsMenuOpen(window.innerWidth < 820 ? false : true);
 
   return (
     <MenuContext.Provider value={{ isMenuOpen, toggleMenu, closeMenu }}>
