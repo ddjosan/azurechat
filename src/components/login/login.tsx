@@ -28,7 +28,7 @@ export const LogIn = () => {
           {/* <button onClick={() => signIn("github")} className="button-login">GitHub</button> */}
         </CardContent>
       </div>
-      <div className="container" />
+      <div className="login-container" />
     </div>
   );
 };
