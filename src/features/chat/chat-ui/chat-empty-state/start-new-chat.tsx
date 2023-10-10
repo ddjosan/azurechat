@@ -18,9 +18,8 @@ export const StartNewChat: FC<Prop> = (props) => {
         </Typography>
         <div className="flex flex-col gap-2">
           <p className="">
-            Welcome to {AI_NAME}. You should interact in a friendly manner with
-            the AI assistant and refrain from participating in any harmful
-            activities.
+            Welcome to {AI_NAME}. This version of AI assitant is safe for usage in buisiness purposes
+            with no chat history saved outside organization.
           </p>
           <p>You can start a new chat with me by clicking the button below.</p>
         </div>
