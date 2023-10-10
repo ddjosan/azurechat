@@ -1,0 +1,16 @@
+.display-row {
+    flex-direction: column;
+}
+
+.hidden-element {
+    display: flex;
+}
+@media  screen and (orientation: portrait) {
+    .display-row {
+        flex-direction: row;
+    }
+
+    .hidden-element {
+        display: none;
+    }
+}

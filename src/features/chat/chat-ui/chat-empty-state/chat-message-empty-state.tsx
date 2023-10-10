@@ -14,15 +14,15 @@ export const ChatMessageEmptyState: FC<Prop> = (props) => {
   const { showFileUpload } = fileState;
 
   return (
-    <div className="grid grid-cols-5 w-full items-center container mx-auto max-w-3xl justify-center h-full gap-9">
-      <div className="col-span-2 gap-5 flex flex-col flex-1">
+    <div className="flex flex-col w-full h-full p-2 items-center justify-center">
+      <div className="flex flex-col justify-center items-center p-3 mb-8">
         <img src="/ai-icon2.png" className="w-36" />
-        <p className="">
+        <p className="max-w-sm">
           Start by just typing your message in the box below. You can also
           personalise the chat by making changes to the settings on the right.
         </p>
       </div>
-      <Card className="col-span-3 flex flex-col gap-5 p-5 ">
+      <Card className="flex flex-col max-w-sm p-2">
         <Typography variant="h4" className="text-primary">
           Personalise
         </Typography>

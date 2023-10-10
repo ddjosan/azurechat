@@ -1,13 +1,15 @@
+"use client";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useMenuContext } from "@/features/menu/menu-context";
 
 const Menu = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("w-80 flex flex-col", className)} {...props} />
+  <div ref={ref} className={cn("flex flex-col", className)} {...props} />
 ));
 
 Menu.displayName = "Menu";
@@ -42,20 +44,31 @@ MenuContent.displayName = "MenuContent";
 interface MenuItemProps extends React.HTMLAttributes<HTMLLinkElement> {
   href: string;
   isSelected?: boolean;
+  closeOnChange?: boolean;
 }
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
+
+  const { closeMenu } = useMenuContext()
+
+  const closeOnChange = () => {
+      if(props.closeOnChange){
+        closeMenu();
+      }
+  }
   return (
-    <Link
-      className={cn(
-        props.className,
-        "items-center text-sm font-medium flex gap-2 p-2 py-1 rounded-md hover:bg-primary/25",
-        props.isSelected && "bg-primary/25"
-      )}
-      href={props.href}
-    >
-      {props.children}
-    </Link>
+    <div onClick={closeOnChange}>
+      <Link
+        className={cn(
+          props.className,
+          "items-center text-sm font-medium flex gap-2 p-2 py-1 rounded-md hover:bg-primary/25",
+          props.isSelected && "bg-primary/25"
+        )}
+        href={props.href}
+      >
+        {props.children}
+      </Link>
+    </div>
   );
 };
 

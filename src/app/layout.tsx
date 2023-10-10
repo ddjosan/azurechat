@@ -5,6 +5,7 @@ import { AI_NAME } from "@/features/theme/customise";
 import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./layout.css"
 
 export const dynamic = "force-dynamic";
 
@@ -28,6 +29,7 @@ export default function RootLayout({
             <div
               className={cn(
                 inter.className,
+                "layout-wrapper",
                 "flex w-full p-2 h-full gap-2 bg-primary"
               )}
             >

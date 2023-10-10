@@ -1,0 +1,5 @@
+@media screen and (orientation: portrait){
+    .layout-wrapper {
+        flex-direction: column;
+    }
+}

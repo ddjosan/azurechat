@@ -13,13 +13,15 @@ import { UserProfile } from "../user-profile";
 
 import { useSession } from "next-auth/react";
 import { useMenuContext } from "./menu-context";
+import './menu.css'
+import { NewChat } from "../chat/chat-menu/new-chat";
 
 export const MainMenu = () => {
   const { data: session } = useSession();
   const { isMenuOpen, toggleMenu } = useMenuContext();
   return (
-    <div className="flex flex-col justify-between p-2">
-      <div className="flex gap-2  flex-col  items-center">
+    <div className="flex flex-col justify-between p-2 display-row">
+      <div className="flex gap-2  flex-col  items-center display-row">
         <Button
           onClick={toggleMenu}
           className="rounded-full w-[40px] h-[40px] p-1 text-primary"
@@ -29,22 +31,23 @@ export const MainMenu = () => {
         </Button>
         <Button
           asChild
-          className="rounded-full w-[40px] h-[40px] p-1 text-primary"
+          className="rounded-full w-[40px] h-[40px] p-1 text-primary hidden-element"
           variant={"outline"}
         >
           <Link href="/chat" title="Home">
             <img src="/ai-icon2.png" />
           </Link>
         </Button>
-        <Button
+        {/* <Button
           asChild
-          className="rounded-full w-[40px] h-[40px] p-2 text-primary"
+          className="rounded-full w-[40px] h-[40px] p-2 text-primary hidden-element"
           variant={"outline"}
         >
           <Link href="/chat" title="Chat">
             <MessageCircle />
           </Link>
-        </Button>
+        </Button> */}
+        <NewChat closeOnChange={false}/>
         {session?.user?.isAdmin ? (
           <Button
             asChild
@@ -59,7 +62,7 @@ export const MainMenu = () => {
           <></>
         )}
       </div>
-      <div className="flex flex-col gap-2 items-center">
+      <div className="flex flex-col gap-2 items-center hidden-element">
         <ThemeToggle />
         <UserProfile />
       </div>

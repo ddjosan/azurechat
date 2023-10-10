@@ -1,0 +1,17 @@
+.menu-mobile {
+    display: none;
+}
+
+.menu-desktop {
+    display: flex;
+}
+
+@media screen and (orientation: portrait){
+    .menu-mobile {
+        display: flex;
+    }
+
+    .menu-desktop {
+        display: none;
+    }
+}

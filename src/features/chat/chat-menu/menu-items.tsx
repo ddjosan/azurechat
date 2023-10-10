@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import { MenuItem } from "@/components/menu";
 import { Button } from "@/components/ui/button";
 import { SoftDeleteChatThreadByID } from "@/features/chat/chat-services/chat-thread-service";
@@ -7,11 +8,13 @@ import { useParams, useRouter } from "next/navigation";
 import { FC } from "react";
 import { ChatThreadModel } from "../chat-services/models";
 
+
 interface Prop {
   menuItems: Array<ChatThreadModel>;
+  closeOnChange?: boolean;
 }
 
-export const MenuItems: FC<Prop> = (props) => {
+const MenuItems: FC<Prop> = (props) => {
   const { id } = useParams();
   const router = useRouter();
 
@@ -29,6 +32,7 @@ export const MenuItems: FC<Prop> = (props) => {
           isSelected={id === thread.id}
           key={thread.id}
           className="justify-between group/item"
+          closeOnChange = {props.closeOnChange}
         >
           {thread.chatType === "data" ? (
             <FileText
@@ -46,7 +50,6 @@ export const MenuItems: FC<Prop> = (props) => {
             <span className="overflow-ellipsis truncate"> {thread.name}</span>
           </span>
           <Button
-            className="invisible  group-hover/item:visible hover:text-brand"
             size={"sm"}
             variant={"ghost"}
             onClick={async (e) => {
@@ -66,3 +69,5 @@ export const MenuItems: FC<Prop> = (props) => {
     </>
   );
 };
+
+export default MenuItems

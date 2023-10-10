@@ -33,13 +33,13 @@ const ChatRow: FC<ChatRowProps> = (props) => {
   return (
     <div
       className={cn(
-        "container mx-auto max-w-4xl py-6 flex flex-col ",
+        "container mx-auto max-w-4xl py-6 flex flex-col -w-full",
         props.type === "assistant" ? "items-start" : "items-end"
       )}
     >
       <div
         className={cn(
-          "flex flex-col  max-w-[690px] border rounded-lg overflow-hidden  p-4 gap-8"
+          "flex flex-col  max-w-full border rounded-lg overflow-hidden  p-2 gap-8"
         )}
       >
         <div className="flex flex-1">
