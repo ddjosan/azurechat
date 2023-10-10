@@ -9,7 +9,7 @@ interface Prop {}
 export const StartNewChat: FC<Prop> = (props) => {
   return (
     <div className="flex flex-col w-full items-center justify-center h-full p-2">
-      <div className="flex flex-col mb-8">
+      <div className="flex flex-col items-center  mb-8">
         <img src="/undp-logo.png" className="w-1/4" />
       </div>
       <Card className="flex flex-col p-5 max-w-sm">
