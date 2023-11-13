@@ -5,12 +5,14 @@ import {
   LayoutDashboard,
   PanelLeftClose,
   PanelRightClose,
+  Triangle,
 } from "lucide-react";
 import Link from "next/link";
 import { ThemeToggle } from "../theme/theme-toggle";
 import { UserProfile } from "../user-profile";
 
 import { useSession } from "next-auth/react";
+import { UpdateIndicator } from "../change-log/update-indicator";
 import { useMenuContext } from "./menu-context";
 import './menu.css'
 import { NewChat } from "../chat/chat-menu/new-chat";
@@ -42,6 +44,16 @@ export const MainMenu = () => {
         ) : (
           <></>
         )}
+        <Button
+          asChild
+          className="rounded-full w-[40px] h-[40px] p-2 text-primary"
+          variant={"outline"}
+        >
+          <Link href="/change-log" title="change log" className="relative">
+            <Triangle />
+            <UpdateIndicator />
+          </Link>
+        </Button>
       </div>
       <div className="flex flex-col gap-2 items-center hidden-element">
         <ThemeToggle />
