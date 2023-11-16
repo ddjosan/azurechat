@@ -13,11 +13,7 @@ export const MenuContext = createContext<MenuContextProps>({
 });
 
 export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
-
-  useEffect( () => {
-    setIsMenuOpen(window.innerWidth < 820 ? false : true)
-  }, [])
+  const [isMenuOpen, setIsMenuOpen] = useState(window.innerWidth < 820 ? false : true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
