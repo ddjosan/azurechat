@@ -3,7 +3,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useMenuContext } from "@/features/menu/menu-context";
+import { useMenuContext } from "@/features/main-menu/menu-context";
 
 const Menu = React.forwardRef<
   HTMLDivElement,

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { CreateChatThread } from "../chat-services/chat-thread-service";
-import { useMenuContext } from "@/features/menu/menu-context";
+import { useMenuContext } from "@/features/main-menu/menu-context";
 
 interface NewChatProps extends React.HTMLAttributes<HTMLLinkElement> {
   closeOnChange?: boolean;
