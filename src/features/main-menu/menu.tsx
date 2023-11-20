@@ -31,7 +31,7 @@ export const MainMenu = () => {
           {isMenuOpen ? <PanelLeftClose /> : <PanelRightClose />}
         </Button>
         <NewChat closeOnChange={false}/>
-        {session?.user?.isAdmin ? (
+        {/* {session?.user?.isAdmin ? (
           <Button
             asChild
             className="rounded-full w-[40px] h-[40px] p-2 text-primary"
@@ -53,7 +53,7 @@ export const MainMenu = () => {
             <Triangle />
             <UpdateIndicator />
           </Link>
-        </Button>
+        </Button> */}
       </div>
       <div className="flex flex-col gap-2 items-center hidden-element">
         <ThemeToggle />
