@@ -4,9 +4,11 @@ import { Citation } from "../../features/chat/chat-ui/markdown/citation";
 import { CodeBlock } from "./code-block";
 import { citationConfig } from "./config";
 import { Paragraph } from "./paragraph";
+import './markdown.css'
 
 interface Props {
   content: string;
+  pulse?: boolean;
 }
 
 export const Markdown: FC<Props> = (props) => {
@@ -16,7 +18,9 @@ export const Markdown: FC<Props> = (props) => {
     ...citationConfig,
   });
 
-  return Markdoc.renderers.react(content, React, {
-    components: { Citation, Paragraph, CodeBlock },
-  });
+  return (<div className={props.pulse ? "pulse-circle" : ""}>
+   { Markdoc.renderers.react(content, React, {
+      components: { Citation, Paragraph, CodeBlock },
+    })}
+  </div>)
 };
