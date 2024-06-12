@@ -48,7 +48,7 @@ const ChatRowLast: FC<ChatRowProps> = (props) => {
           props.messageDisplayed(true);
         }
       }
-    }, 33);
+    }, 13);
 
     return () => clearInterval(interval);
   }, [index, lastMessage.length]);
